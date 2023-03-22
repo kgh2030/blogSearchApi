@@ -39,6 +39,7 @@ public class BlogSearchApiController {
 			return ReponseUtils.fail(null, reponseMap, "kakao");
 		}
 		
+		
 	}
 	
 	@SuppressWarnings("unchecked")
