@@ -10,6 +10,7 @@ public class BlogSearchApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BlogSearchApiApplication.class, args);
+
 	}
 
 }
