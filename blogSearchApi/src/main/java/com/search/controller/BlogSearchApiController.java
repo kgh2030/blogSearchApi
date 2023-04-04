@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.search.response.ReponseUtils;
+import com.search.response.ResponseUtils;
 import com.search.response.Response;
 import com.search.service.BlogSearchApiService;
 import com.search.vo.ParamVO;
@@ -34,9 +34,9 @@ public class BlogSearchApiController {
 		Map<String, Object> reponseMap = mapper.readValue(responseData, Map.class);
 		
 		if(responseCode == 200) {
-			return ReponseUtils.success(reponseMap, "kakao");
+			return ResponseUtils.success(reponseMap, "kakao");
 		}else {
-			return ReponseUtils.fail(null, reponseMap, "kakao");
+			return ResponseUtils.fail(null, reponseMap, "kakao");
 		}
 		
 		
@@ -54,9 +54,9 @@ public class BlogSearchApiController {
 		Map<String, Object> reponseMap = mapper.readValue(responseData, Map.class);
 		
 		if(responseCode == 200) {
-			return ReponseUtils.success(reponseMap, "naver");
+			return ResponseUtils.success(reponseMap, "naver");
 		}else {
-			return ReponseUtils.fail(null, reponseMap, "naver");
+			return ResponseUtils.fail(null, reponseMap, "naver");
 		}
 		
 	}
@@ -64,7 +64,7 @@ public class BlogSearchApiController {
 
 	@RequestMapping("/api/popularSearchList")
 	public Response<List<Map<String, Object>>> popularSearchList() throws Exception {
-		return ReponseUtils.success(blogSearchApiService.popularSearchList(), "local");
+		return ResponseUtils.success(blogSearchApiService.popularSearchList(), "local");
 	}
 	
 	
